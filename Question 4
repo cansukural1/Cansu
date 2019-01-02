@@ -1,0 +1,14 @@
+SELECT
+  DATE(login_date),
+  Name AS login_date,
+  sum(userId) as userId,
+  COUNT(*) AS i_user_login_logs
+FROM
+  B INNER JOIN A
+  ON A.userId = B.userId
+GROUP BY
+  DATE(login_date),
+  Name
+ORDER BY
+  DATE(login_date),
+  Name
