@@ -1,0 +1,6 @@
+SELECT 
+Name AS [username],[emailaddress],
+username, count(username) 
+from i_users,
+Group By username
+Having Count(login_date)>1
